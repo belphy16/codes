@@ -1,0 +1,53 @@
+<ol class="breadcrumb" style="margin-bottom:0px!important">
+</ol>
+<img src="imgs/femshoes-banner.jpg" alt="Women Shoes banner" class="img-responsive" height="200">
+<div class="well well-sm">
+    <strong>Display</strong>
+    <div class="btn-group">
+        <a href="javascript:void(0)" id="list" class="btn btn-default btn-sm"><span class="fa fa-th-list"></span> List</a>
+        <a href="javascript:void(0)" id="grid" class="btn btn-default btn-sm"><span class="fa fa-th-large"></span> Grid</a>
+    </div>
+</div>
+
+<div id="products" class="row list-group">
+    <div class="windows8" [hidden]="!dashboardBridge.ajaxInProgress" >
+        <div class="wBall" id="wBall_1">
+            <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_2">
+            <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_3">
+            <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_4">
+            <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_5">
+            <div class="wInnerBall"></div>
+        </div>
+    </div>
+    <div *ngFor="let product of dashboardBridge.products;let i of index" class="item  col-xs-4 col-lg-4">
+        <div class="thumbnail">
+            <img class="group list-group-image img-thumbnail" src="{{product.productImage}}" alt="" />
+            <div class="caption">
+                <h4 class="group inner list-group-item-heading">
+                    {{product.productTitle}}
+                </h4>
+                <p class="group inner list-group-item-text">
+                    {{product.productDescription}}
+                </p>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <p class="lead">
+                            {{product.productPrice}} $
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <a class="btn btn-success" (click)="loadProduct(product.productId,1)">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

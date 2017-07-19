@@ -1,0 +1,94 @@
+<div class="well">
+  <div>
+    <ul class="nav nav-list">
+      <li>
+        <h3>
+          <label class="tree-toggle nav-header">Shoes</label>
+        </h3>
+        <ul class="nav nav-list tree">
+          <li>
+            <label class="tree-toggle nav-header">{{dashboardBridge.sideNavLabel}}</label>
+            <ul *ngFor="let category of dashboardBridge.categories;let i of index" class="nav nav-list tree">
+              <li>
+                <a href="javascript:void(0);" (click)="dashboardBridge.changeStyle(category.categoryKey)">{{category.categoryValue}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="divider">&nbsp;</li>
+      <li>
+        <label class="tree-toggle nav-header">Sizes</label>
+      </li>
+      <li>
+        <div class="btn-group" role="group" aria-label="4">
+          <button type="button" class="btn btn-default" (click)="dashboardBridge.changeSize(8)">8</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="5">
+          <button type="button" class="btn btn-default" (click)="dashboardBridge.changeSize(9)">9</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="6">
+          <button type="button" class="btn btn-default" (click)="dashboardBridge.changeSize(10)">10</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="7">
+          <button type="button" class="btn btn-default" (click)="dashboardBridge.changeSize(11)">11</button>
+        </div>      
+      </li>
+
+      <!--
+
+      <li class="divider">&nbsp;</li>
+      <li>
+        <label class="tree-toggle nav-header">Color</label>
+        <ul class="nav nav-list tree">
+          <li>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn label-success active">
+                <input type="checkbox"autocomplete="off" checked="checked" />
+              </label>
+              <label class="btn btn-primary">
+                <input type="checkbox" autocomplete="off" />
+              </label>
+              <label class="btn label-info">
+                <input type="checkbox" autocomplete="off" />
+              </label>
+              <label class="btn label-default">
+                <input type="checkbox" autocomplete="off" />
+              </label>
+              <label class="btn label-warning">
+                <input type="checkbox" autocomplete="off" />
+              </label>
+              <label class="btn label-danger">
+                <input type="checkbox" autocomplete="off" />
+              </label>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="divider">&nbsp;</li>
+      <li>
+        <label class="tree-toggle nav-header">Material</label>
+        <fieldset>
+          <div class="checkbox">
+            <input id="checkbox1" type="checkbox" /><label for="checkbox1">Leather</label>
+          </div>
+          <div class="checkbox">
+            <input id="checkbox2" type="checkbox" /><label for="checkbox2">Rubber</label>
+          </div>
+          <div class="checkbox">
+            <input id="checkbox3" type="checkbox" /><label for="checkbox3">Canvas</label>
+          </div>
+          <div class="checkbox">
+            <input id="checkbox4" type="checkbox" /><label for="checkbox4">Synthetic</label>
+          </div>
+          <div class="checkbox">
+            <input id="checkbox5" type="checkbox" /><label for="checkbox5">Velvet</label>
+          </div>
+        </fieldset>
+      </li>
+
+      -->
+
+    </ul>
+  </div>
+</div>

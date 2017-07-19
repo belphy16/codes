@@ -1,0 +1,22 @@
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span>({{ cartService.itemCount}})<span class="caret"></span></a>
+  <ul class="dropdown-menu dropdown-cart" role="menu">
+    <li>
+      <span class="item" *ngFor="let item of cartService.items">
+                    <span class="item-left">
+                        <img width="50" height="50" src="{{item.productImage}}" alt="" />
+                        <span class="item-info">
+                            <span>{{item.productTitle | slice:0:18}}</span><span class = "badge pull-right">{{item.productCount}}</span>
+      <span>{{item.productTotalPrice}}</span>
+      </span>
+      </span>
+      <span class="item-right">
+                    <button class="btn btn-xs btn-danger pull-right" (click)="removeItem(item)">x</button>
+                    </span>
+      </span>
+    </li>
+
+    <li class="divider"></li>
+    <li><a class="text-center" routerLink="/checkout">Checkout</a></li>
+  </ul>
+</li>

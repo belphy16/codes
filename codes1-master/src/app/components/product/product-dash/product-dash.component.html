@@ -1,0 +1,49 @@
+<div class="card">
+	<div class="container-fluid">
+		<div class="wrapper row">
+			<div class="preview col-md-6">
+				<div class="preview-pic tab-content">
+					<div class="tab-pane " [class.active]="currentThumb==i" id="pic-{{i+1}}" *ngFor="let image of dashboardBridge.currentProduct.productImages; let i=index"><img src="{{image}}" /></div>
+
+				</div>
+				<ul class="preview-thumbnail nav nav-tabs">
+					<li [class.active]="currentThumb==i" *ngFor="let image of dashboardBridge.currentProduct.productImages; let i=index">
+						<a data-target="#pic-{{i+1}}" data-toggle="tab"><img src="{{image}}" (click)="setCurrentThumb(i)"/></a>
+					</li>
+				</ul>
+			</div>
+			<div class="details col-md-6">
+				<h3 class="product-title">{{dashboardBridge.currentProduct.productTitle}}</h3>
+				<div class="rating">
+					<div class="stars">
+						<span class="fa fa-star" *ngFor="let s of dashboardBridge.currentProduct.starrating" [class.checked]="s==1"></span>
+						
+					</div>
+				</div>
+				<p class="product-description">{{dashboardBridge.currentProduct.productDescription}}</p>
+				<h4 class="price">Current price: <span>${{dashboardBridge.currentProduct.productPrice}}</span></h4>
+				<ul class="nav nav-list">
+					<li><h4>Sizes</h4></li>
+					<li>
+						<div class="btn-group" role="group" aria-label="1">
+							<button type="button" class="btn btn-default">8</button>
+						</div>
+						<div class="btn-group" role="group" aria-label="2">
+							<button type="button" class="btn btn-default">9</button>
+						</div>
+						<div class="btn-group" role="group" aria-label="3">
+							<button type="button" class="btn btn-default">10</button>
+						</div>
+						<div class="btn-group" role="group" aria-label="4">
+							<button type="button" class="btn btn-default" >11</button>
+						</div>
+					</li>
+					<li>&nbsp;</li>
+				</ul>
+				<div class="action">
+					<button class="add-to-cart btn btn-default" type="button" (click)="addToCart($event, dashboardBridge.currentProduct,2)">Add to Cart</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
